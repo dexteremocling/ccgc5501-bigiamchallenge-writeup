@@ -29,8 +29,6 @@ IAM Policy:
     ]
 }
 
-Write a short analysis about the IAM policy here
-
 * What do I have access to?
 
   I can read objects (files) stored in the S3 bucket with directory “thebigiamchallenge-storage-9979f4b” as the access is allowed within the bucket.
@@ -54,7 +52,7 @@ The path is s3://thebigiamchallenge-storage-9979f4b/files/
 
 b.	To list the contents of the bucket, I’ve looked below references online to obtain the AWS CLI command syntax:
 -	https://blog.awsfundamentals.com/aws-s3-ls by Tobias Schmidt dated Aug 15, 2023
--	-	https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/index.html
+-	https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/index.html
 
 The command is: 
 aws s3 ls s3://thebigiamchallenge-storage-9979f4b/files/
@@ -90,9 +88,6 @@ The breakthrough came from understanding the IAM Policy, particularly the Action
 On the blue side, how can the learning be used to properly defend the important assets?
 
 To defend important assets:
-
 a.	Restrict Public Access
-
 b.	Use conditions like IP restrictions, time-based access, or multi-factor authentication
-
 c.	Grant users only the permissions they need and nothing more
