@@ -1,9 +1,11 @@
 Challenge Number: 1
 
 Challenge Statement:
+
 Buckets of Fun – We all know that public buckets are risky. But can you find the flag?
 
 IAM Policy:
+
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -30,18 +32,22 @@ IAM Policy:
 Write a short analysis about the IAM policy here
 
 * What do I have access to?
+
   I can read objects (files) stored in the S3 bucket with directory “thebigiamchallenge-storage-9979f4b” as the access is allowed within the bucket.
   I can list the contents of the S3 bucket for objects that have the prefix “files/”.
 
 * What don't I have access to?
+
   I cannot upload, modify, or delete any objects in the bucket as it is not included in the policy.
 
 * What do I find interesting?
+
   It allows access to everyone which is risky as it makes the bucket accessible to the public. This could lead to unintended exposure of sensitive data.
 
 Solution:
 
 To find the flag, I’ve taken the following steps:
+
 a.	The clue indicated that the flag is stored in an S3 bucket. Looking at the given IAM Policy, the directory for the S3 bucket is presented as Resource and s3:prefix.
 
 The path is s3://thebigiamchallenge-storage-9979f4b/files/
@@ -66,19 +72,27 @@ e.	The content of flag1.txt shows:
 Reflection:
 
 What was your approach?
+
 The clue indicated that the flag is stored in an S3 bucket. Looking at the IAM Policy, I found the directory path for the S3 bucket. I researched AWS CLI command syntax from online guides on how to list and open files in an S3 bucket.
 
 What was the biggest challenge?
+
 The hardest part was figuring out the correct AWS CLI commands and understanding the IAM policy.
 
 How did you overcome the challenges?
+
 I studied the policy carefully, looked up command syntax online, and tested each command step-by-step.
 
 What led to the break through?
+
 The breakthrough came from understanding the IAM Policy, particularly the Action and Resource fields which indicated the access and directory.
 
 On the blue side, how can the learning be used to properly defend the important assets?
+
 To defend important assets:
+
 a.	Restrict Public Access
+
 b.	Use conditions like IP restrictions, time-based access, or multi-factor authentication
+
 c.	Grant users only the permissions they need and nothing more
