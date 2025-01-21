@@ -28,25 +28,27 @@ IAM Policy:
 }
 
 Write a short analysis about the IAM policy here
+
 * What do I have access to?
-* I can read objects (files) stored in the S3 bucket with directory “thebigiamchallenge-storage-9979f4b” as the access is allowed within the bucket.
-I can list the contents of the S3 bucket for objects that have the prefix “files/”.
+  I can read objects (files) stored in the S3 bucket with directory “thebigiamchallenge-storage-9979f4b” as the access is allowed within the bucket.
+  I can list the contents of the S3 bucket for objects that have the prefix “files/”.
 
 * What don't I have access to?
-I cannot upload, modify, or delete any objects in the bucket as it is not included in the policy.
+  I cannot upload, modify, or delete any objects in the bucket as it is not included in the policy.
 
 * What do I find interesting?
-It allows access to everyone which is risky as it makes the bucket accessible to the public. This could lead to unintended exposure of sensitive data.
+  It allows access to everyone which is risky as it makes the bucket accessible to the public. This could lead to unintended exposure of sensitive data.
 
 Solution:
 
 To find the flag, I’ve taken the following steps:
 a.	The clue indicated that the flag is stored in an S3 bucket. Looking at the given IAM Policy, the directory for the S3 bucket is presented as Resource and s3:prefix.
+
 The path is s3://thebigiamchallenge-storage-9979f4b/files/
 
 b.	To list the contents of the bucket, I’ve looked below references online to obtain the AWS CLI command syntax:
 -	https://blog.awsfundamentals.com/aws-s3-ls by Tobias Schmidt dated Aug 15, 2023
--	https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/index.html
+-	-	https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/index.html
 
 The command is: 
 aws s3 ls s3://thebigiamchallenge-storage-9979f4b/files/
