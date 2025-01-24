@@ -2,7 +2,7 @@
 
 ## Challenge Statement:
 
-Google Analytics
+Analytics
 We created our own analytics system specifically for this challenge. We think it's so good that we even used it on this page. What could go wrong?
 Join our queue and get the secret flag.
 ---
@@ -96,6 +96,9 @@ The breakthrough happened when I received the message content from the queue, wh
 ### On the blue side, how can the learning be used to properly defend the important assets?
 
 This learning shows the risks of giving public access. To defend important assets:
+
 a. Restrict public access  
+
 b. Add permissions carefully 
+
 c. Use encryption for messages
