@@ -77,6 +77,7 @@ aws s3 ls s3://thebigiamchallenge-admin-storage-abf1321/files/ --no-sign-request
 ```
 
 d.	The output lists the files inside the bucket. The bucket contains 2 files.
+    
     •	2023-06-07 19:15:43         42 flag-as-admin.txt
     •	2023-06-08 19:20:01      81889 logo-admin.png
 
